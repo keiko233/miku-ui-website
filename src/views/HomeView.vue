@@ -1,5 +1,8 @@
 <template>
   <div>
+    <v-btn>
+  Button
+</v-btn>
     {{ $t('name') }}
   </div>
 </template>
