@@ -5,7 +5,7 @@
     </v-navigation-drawer>
 
     <v-app-bar color="primary" :elevation="0">
-      <v-app-bar-nav-icon @click="drawer = !drawer" icon="menu" />
+      <v-app-bar-nav-icon @click="drawer = !drawer" icon="mdi-menu" />
 
       <v-app-bar-title v-text="$t('name')" />
     </v-app-bar>
