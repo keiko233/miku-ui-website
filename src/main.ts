@@ -6,9 +6,7 @@ import router from './router'
 
 // Vuetify
 import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-
-const vuetify = createVuetify()
+import { vuetify } from './plugins/vuetify'
 
 createApp(App)
   .use(vuetify)
