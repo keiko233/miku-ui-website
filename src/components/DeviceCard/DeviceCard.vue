@@ -21,26 +21,27 @@
     <v-card-actions>
       <v-btn color="primary" @click="openUrl(props.data.sourcforge_url)">SourceForge</v-btn>
 
-      <v-spacer />
+      <v-btn color="primary">
+        Detailed
+        <v-dialog v-model="show" activator="parent" width="648">
+          <v-card>
+            <v-card-text>
+              <span>Change Log:</span>
+              <v-alert class="mt-2" v-for="changelog in props.data.changelog" :text="changelog" />
+            </v-card-text>
 
-      <v-btn :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="show = !show"></v-btn>
+            <v-card-text>
+              <span>Notes:</span>
+              <v-alert class="mt-2" v-for="note in props.data.note" :text="note" />
+            </v-card-text>
+
+            <v-card-actions>
+              <v-btn color="primary" block variant="tonal" @click="show = false">Close</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-btn>
     </v-card-actions>
-
-    <v-expand-transition>
-      <div v-show="show">
-        <v-divider />
-
-        <v-card-text>
-          <span>Change Log:</span>
-          <v-alert class="mt-2" v-for="changelog in props.data.changelog" :text="changelog" />
-        </v-card-text>
-
-        <v-card-text>
-          <span>Notes:</span>
-          <v-alert class="mt-2" v-for="note in props.data.note" :text="note" />
-        </v-card-text>
-      </div>
-    </v-expand-transition>
   </v-card>
 </template>
 
@@ -70,7 +71,7 @@ interface Data {
 }
 
 const props = defineProps({
-  data: { 
+  data: {
     type: Object as PropType<Data>,
     required: true
   }
