@@ -43,7 +43,6 @@ const getDevices = () => {
   fetch('/api/devices/' + getParamsCodename())
     .then(response => response.json())
     .then(response => {
-      console.log(response);
       let tmp = response;
 
       tmp.forEach(function (item: any) {
