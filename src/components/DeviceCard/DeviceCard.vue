@@ -32,7 +32,7 @@
 
             <v-card-text>
               <span>Notes:</span>
-              <v-alert class="mt-2" v-for="note in props.data.note" :text="note" />
+              <v-alert class="mt-2" v-for="note in props.data.note" v-html="note" />
             </v-card-text>
 
             <v-card-actions>
