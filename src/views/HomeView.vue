@@ -14,6 +14,15 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const getParamsCodename = () => {
+  if (!route.params.codename) return '';
+  else return route.params.codename;
+}
+
 const devices = ref([{
   "id": 0,
   "device": null,
@@ -31,9 +40,10 @@ const devices = ref([{
 }]);
 
 const getDevices = () => {
-  fetch('/api/devices')
+  fetch('/api/devices/' + getParamsCodename())
     .then(response => response.json())
     .then(response => {
+      console.log(response);
       let tmp = response;
 
       tmp.forEach(function (item: any) {
@@ -49,6 +59,8 @@ const getDevices = () => {
     })
     .catch(err => console.error(err));
 };
+
+watchEffect(getDevices);
 
 onMounted(() => {
   getDevices();
