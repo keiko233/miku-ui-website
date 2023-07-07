@@ -15,6 +15,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+import { insertDevicesImages } from '../utils/insertDevicesImages';
 
 const route = useRoute();
 
@@ -25,40 +26,14 @@ const getParamsCodename = () => {
   else return route.params.codename;
 }
 
-const devices = ref([{
-  "id": 0,
-  "device": null,
-  "name": null,
-  "version": null,
-  "android": null,
-  "status": null,
-  "selinux": null,
-  "kernelsu": null,
-  "data": null,
-  "sourcforge_url": "",
-  "changelog": [""],
-  "note": [""],
-  "image_url": ""
-}]);
+const devices = ref([{}]);
 
 const getDevices = () => {
   loading.value = true;
   fetch('/api/devices/' + getParamsCodename())
     .then(response => response.json())
     .then(response => {
-      let tmp = response;
-
-      tmp.forEach(function (item: any) {
-        item.changelog = JSON.parse(item.changelog);
-        item.note = JSON.parse(item.note);
-        if (item.device == "odin") item.image_url = "https://camo.githubusercontent.com/931ce1852cefd150d24d34b6a042ace19d78b38068fb4a7b6c77a3fca6877be2/68747470733a2f2f66646e322e67736d6172656e612e636f6d2f76762f706963732f7869616f6d692f6d69782d342d312e6a7067";
-        else if (item.device == "mona") item.image_url = "https://camo.githubusercontent.com/055d686b692803056206521e7a540d925f131b6f746c06a766852919f877311a/68747470733a2f2f63646e2d66696c65732e6b696d6f76696c2e636f6d2f64656661756c742f303030362f35342f7468756d625f3535333132375f64656661756c745f6269672e6a706567";
-        else if (item.device == "Violet") item.image_url = "https://camo.githubusercontent.com/54c88e7d15bae0952face31e67c8aa737f02128090dccb017a964245352a880c/68747470733a2f2f6930312e6170706d6966696c652e636f6d2f76312f4d495f31383435354233453444413730363232364346373533354135384538373546303236372f706d735f313535313038373532302e33343535383033302e6a7067";
-        else if (item.device == "Wayne") item.image_url = "https://camo.githubusercontent.com/9bea6ab00b26dfdda7b1ca862bcc8236834185b9b6f70ba6d41f271724967de0/68747470733a2f2f63646e2e636e626a302e6664732e6170692e6d692d696d672e636f6d2f6232632d6d696d616c6c2d6d656469612f61343834326639616663363135313634616638336332303838613431326663302e6a7067";
-      })
-
-      devices.value = tmp;
-
+      devices.value = insertDevicesImages(response);
       loading.value = false;
     })
     .catch(err => console.error(err));
