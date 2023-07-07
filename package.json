@@ -1,7 +1,7 @@
 {
-  "name": "vite-vue-template",
+  "name": "miku-ui-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "dev": "vite --mode dev",
