@@ -2,5 +2,16 @@
   "language": "简体中文",
   "name": "Miku UI",
   "switch_language": "切换语言",
-  "switch_language_to": "语言切换为"
+  "switch_language_to": "语言切换为",
+  "loading": "加载中",
+  "device_card": {
+    "version": "版本",
+    "status": "维护状态",
+    "data": "更新日期",
+    "source_forge": "SourceForge 链接",
+    "detailed": "详细信息",
+    "change_log": "更新日志",
+    "notes": "备注",
+    "close": "关闭"
+  }
 }

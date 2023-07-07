@@ -3,7 +3,7 @@
     <v-col cols="12" v-if="devices[0].id == 0">
       <div class="loading-box">
         <v-progress-circular indeterminate color="primary" :size="54" :width="6" />
-        <p class="mt-2">Loading</p>
+        <p class="mt-2">{{ $t('Loading') }}</p>
       </div>
     </v-col>
 

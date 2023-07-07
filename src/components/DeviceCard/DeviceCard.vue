@@ -10,33 +10,33 @@
     </v-img>
 
     <v-card-text>
-      <p><span>Miku UI Version:</span> {{ props.data.version }}</p>
-      <p><span>Android Version:</span> {{ props.data.android }}</p>
-      <p><span>Status:</span> {{ props.data.status }}</p>
+      <p><span>Miku UI {{ $t('device_card.version') }}:</span> {{ props.data.version }}</p>
+      <p><span>Android {{ $t('device_card.version') }}:</span> {{ props.data.android }}</p>
+      <p><span>{{ $t('device_card.status') }}:</span> {{ props.data.status }}</p>
       <p><span>Selinux:</span> {{ props.data.selinux }}</p>
       <p><span>Kernel SU:</span> {{ props.data.kernelsu }}</p>
-      <p><span>Data:</span> {{ props.data.data }}</p>
+      <p><span>{{ $t('device_card.data') }}:</span> {{ props.data.data }}</p>
     </v-card-text>
 
     <v-card-actions>
-      <v-btn color="primary" @click="openUrl(props.data.sourcforge_url)">SourceForge</v-btn>
+      <v-btn color="primary" @click="openUrl(props.data.sourcforge_url)">{{ $t('device_card.source_forge') }}</v-btn>
 
       <v-btn color="primary">
-        Detailed
+        {{ $t('device_card.detailed') }}
         <v-dialog v-model="show" activator="parent" width="648">
           <v-card>
             <v-card-text>
-              <span>Change Log:</span>
+              <span>{{ $t('device_card.change_log') }}:</span>
               <v-alert class="mt-2" v-for="changelog in props.data.changelog" :text="changelog" />
             </v-card-text>
 
             <v-card-text>
-              <span>Notes:</span>
+              <span>{{ $t('device_card.notes') }}:</span>
               <v-alert class="mt-2" v-for="note in props.data.note" v-html="note" />
             </v-card-text>
 
             <v-card-actions>
-              <v-btn color="primary" block variant="tonal" @click="show = false">Close</v-btn>
+              <v-btn color="primary" block variant="tonal" @click="show = false">{{ $t('device_card.close') }}</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>

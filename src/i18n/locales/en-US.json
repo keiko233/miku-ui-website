@@ -2,5 +2,16 @@
   "language": "English",
   "name": "Miku UI",
   "switch_language": "Language",
-  "switch_language_to": "Language switched to"
+  "switch_language_to": "Language switched to",
+  "loading": "Loading",
+  "device_card": {
+    "version": "Version",
+    "status": "Status",
+    "data": "Update Data",
+    "source_forge": "SourceForge",
+    "detailed": "Detailed",
+    "change_log": "Change Log",
+    "notes": "Notes",
+    "close": "Close"
+  }
 }
