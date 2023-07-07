@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" color="grey-lighten-5">
-      <!--  -->
+      <NavBar />
     </v-navigation-drawer>
 
     <v-app-bar color="primary" :elevation="0">
