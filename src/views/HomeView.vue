@@ -34,8 +34,6 @@ const getDevices = () => {
   fetch('/api/devices')
     .then(response => response.json())
     .then(response => {
-      devices.value = response;
-
       let tmp = response;
 
       tmp.forEach(function (item: any) {
@@ -46,6 +44,8 @@ const getDevices = () => {
         else if (item.device == "Violet") item.image_url = "https://camo.githubusercontent.com/54c88e7d15bae0952face31e67c8aa737f02128090dccb017a964245352a880c/68747470733a2f2f6930312e6170706d6966696c652e636f6d2f76312f4d495f31383435354233453444413730363232364346373533354135384538373546303236372f706d735f313535313038373532302e33343535383033302e6a7067";
         else if (item.device == "Wayne") item.image_url = "https://camo.githubusercontent.com/9bea6ab00b26dfdda7b1ca862bcc8236834185b9b6f70ba6d41f271724967de0/68747470733a2f2f63646e2e636e626a302e6664732e6170692e6d692d696d672e636f6d2f6232632d6d696d616c6c2d6d656469612f61343834326639616663363135313634616638336332303838613431326663302e6a7067";
       })
+
+      devices.value = tmp;
     })
     .catch(err => console.error(err));
 };
