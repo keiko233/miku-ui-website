@@ -46,11 +46,9 @@
 </template>
 
 <script setup lang="ts">
-const show = ref(false);
+import { openUrl } from '../../utils/openUrl';
 
-const openUrl = (url: string) => {
-  window.open(url, '_blank');
-};
+const show = ref(false);
 
 interface Data {
   id: number,
