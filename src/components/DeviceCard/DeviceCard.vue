@@ -46,8 +46,6 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, ref } from 'vue';
-
 const show = ref(false);
 
 const openUrl = (url: string) => {
