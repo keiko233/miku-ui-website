@@ -7,7 +7,7 @@
       </div>
     </v-col>
 
-    <v-col cols="4" v-else v-for="data in devices">
+    <v-col cols="12" sm="6" md="4" v-else v-for="data in devices">
       <DeviceCard :data="data" />
     </v-col>
   </v-row>
