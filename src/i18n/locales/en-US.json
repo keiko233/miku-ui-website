@@ -1,4 +1,6 @@
 {
   "language": "English",
-  "name": "Miku UI"
+  "name": "Miku UI",
+  "switch_language": "Language",
+  "switch_language_to": "Language switched to"
 }

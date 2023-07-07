@@ -10,6 +10,8 @@
       <v-app-bar-title>
         <v-img width="96" src="mikuui_banner.png" />
       </v-app-bar-title>
+
+      <LanguageSwitch />
     </v-app-bar>
 
     <v-main>

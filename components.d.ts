@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     DeviceCard: typeof import('./src/components/DeviceCard/DeviceCard.vue')['default']
+    LanguageSwitch: typeof import('./src/components/LanguageSwitch/LanguageSwitch.vue')['default']
     NavBar: typeof import('./src/components/NavBar/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
