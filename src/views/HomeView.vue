@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12" v-if="devices[0].id == 0">
+    <v-col cols="12" v-if="loading">
       <div class="loading-box">
         <v-progress-circular indeterminate color="primary" :size="54" :width="6" />
         <p class="mt-2">{{ $t('Loading') }}</p>
@@ -17,6 +17,8 @@
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+
+const loading = ref(false);
 
 const getParamsCodename = () => {
   if (!route.params.codename) return '';
@@ -40,6 +42,7 @@ const devices = ref([{
 }]);
 
 const getDevices = () => {
+  loading.value = true;
   fetch('/api/devices/' + getParamsCodename())
     .then(response => response.json())
     .then(response => {
@@ -55,6 +58,8 @@ const getDevices = () => {
       })
 
       devices.value = tmp;
+
+      loading.value = false;
     })
     .catch(err => console.error(err));
 };
