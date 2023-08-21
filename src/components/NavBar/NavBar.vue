@@ -34,6 +34,7 @@ const items = ref([
   { device: 'All Devices', icon: 'mdi-home' },
   { device: 'Xiaomi Mix 4', codename: 'odin', icon: 'mdi-cellphone' },
   { device: 'Xiaomi Civi', codename: 'mona', icon: 'mdi-cellphone' },
+  { device: 'Xiaomi Civi 1S', codename: 'zijin', icon: 'mdi-cellphone' },
   { device: 'Xiaomi 6X', codename: 'Wayne', icon: 'mdi-cellphone' },
   { device: 'Redmi Note 7 Pro', codename: 'Violet', icon: 'mdi-cellphone' },
 ]);
