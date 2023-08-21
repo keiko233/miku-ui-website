@@ -38,13 +38,13 @@ const options = ref([
 const handleSelect = (key: string) => {
   // @ts-ignore
   i18n.global.locale.value = key;
-  localStorage.setItem('uaerLanguage', key);
+  localStorage.setItem('userLanguage', key);
   snackbar.value.show = true;
   snackbar.value.text = `${i18n.global.t('switch_language_to')} ${i18n.global.t('language')}`;
 };
 
 onMounted(() => {
   // @ts-ignore
-  i18n.global.locale.value = localStorage.getItem('uaerLanguage');
+  i18n.global.locale.value = localStorage.getItem('userLanguage');
 });
 </script>
