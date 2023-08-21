@@ -13,6 +13,7 @@ export const insertDevicesImages = (devices: Array<any>) => {
     else if (item.device == "Violet") item.image_url = Violet;
     else if (item.device == "Wayne") item.image_url = Wayne;
     else if (item.device == "zijin") item.image_url = zijin;
+    else if (item.device == "mona/zijin") item.image_url = mona;
   });
 
   return devices;
