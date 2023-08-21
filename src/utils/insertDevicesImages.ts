@@ -2,6 +2,7 @@ import odin from '../assets/devices/odin.png';
 import mona from '../assets/devices/mona.png';
 import Violet from '../assets/devices/Violet.png';
 import Wayne from '../assets/devices/Wayne.png';
+import zijin from '../assets/devices/zijin.jpg';
 
 export const insertDevicesImages = (devices: Array<any>) => {
   devices.forEach(function (item: any) {
@@ -11,6 +12,7 @@ export const insertDevicesImages = (devices: Array<any>) => {
     else if (item.device == "mona") item.image_url = mona;
     else if (item.device == "Violet") item.image_url = Violet;
     else if (item.device == "Wayne") item.image_url = Wayne;
+    else if (item.device == "zijin") item.image_url = zijin;
   });
 
   return devices;
