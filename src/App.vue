@@ -14,8 +14,8 @@
       <LanguageSwitch />
     </v-app-bar>
 
-    <v-main>
-      <v-container class="custom-background">
+    <v-main class="custom-background">
+      <v-container>
         <router-view />
       </v-container>
     </v-main>
