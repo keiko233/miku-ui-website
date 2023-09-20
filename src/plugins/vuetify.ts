@@ -4,7 +4,7 @@ export const mikuLightTheme: ThemeDefinition = {
   colors: {
     background: '#FFFFFF',
     surface: '#FFFFFF',
-    primary: '#39c5bb',
+    primary: '#3A88BB',
   },
 }
 

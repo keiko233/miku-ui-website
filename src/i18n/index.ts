@@ -7,8 +7,8 @@ const i18n = createI18n({
   legacy: false,
   locale: 'en-US',
   fallbackLocale: 'en-US',
-  // silentTranslationWarn: true,
-  // silentFallbackWarn: true,
+  silentTranslationWarn: true,
+  silentFallbackWarn: true,
   globalInjection: true,
   messages: {
     'en-US': enUS,

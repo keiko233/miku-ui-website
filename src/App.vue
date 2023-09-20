@@ -4,7 +4,7 @@
       <NavBar />
     </v-navigation-drawer>
 
-    <v-app-bar color="#aeecff">
+    <v-app-bar color="#3A88BB" class="text-white">
       <v-app-bar-nav-icon @click="drawer = !drawer" icon="mdi-menu" />
 
       <v-app-bar-title>
@@ -15,7 +15,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container>
+      <v-container class="custom-background">
         <router-view />
       </v-container>
     </v-main>
@@ -25,3 +25,9 @@
 <script setup lang="ts">
 const drawer = ref(true);
 </script>
+
+<style scoped lang="less">
+.custom-background {
+  background: linear-gradient(45deg, #ee77521a, #e73c7e12, #83deff57);
+}
+</style>

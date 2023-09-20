@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <v-list>
-      <v-list-item v-for="(item, i) in items" :key="i" :value="item" active-color="primary" rounded="xl"
+    <v-list mandatory>
+      <v-list-item v-for="(item, i) in items" :key="i" :value="item" color="primary" rounded="xl"
         @click="click(item.codename)">
         <template v-slot:prepend>
           <v-icon :icon="item.icon" />
@@ -11,13 +11,18 @@
       </v-list-item>
     </v-list>
 
-    <v-card class="mx-4 mb-4" prepend-icon="mdi-github">
-      <template v-slot:title>
-        <div @click="openUrl('https://elaina.moe')">keiko233</div>
-      </template>
-
+    <v-card class="mx-4 mb-4" color="primary">
       <v-card-text>
-        <div @click="openUrl('https://github.com/keiko233/miku-ui-website')">Version: {{ packageJson.version }}</div>
+        <div class="d-flex align-center mb-2">
+          <v-avatar color="grey-darken-3" image="https://majokeiko.com/logo.jpeg" />
+          <div>
+            <p class="ml-2"><b>keiko233</b></p>
+            <p class="ml-2">Version: {{ packageJson.version }}</p>
+          </div>
+        </div>
+
+        <v-btn prepend-icon="mdi-github" variant="outlined" size="small" block @click="openUrl('https://github.com/keiko233/miku-ui-website')">GitHub</v-btn>
+        <v-btn prepend-icon="mdi-github" variant="outlined" class="mt-1" size="small" block @click="openUrl('https://elaina.moe')">My site</v-btn>
       </v-card-text>
     </v-card>
   </div>
@@ -47,7 +52,7 @@ const click = (path?: string) => {
 
 <style scoped lang="less">
 .container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

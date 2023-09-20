@@ -25,19 +25,22 @@
         {{ $t('device_card.detailed') }}
         <v-dialog v-model="show" activator="parent" width="648">
           <v-card>
-            <v-card-text>
-              <span>{{ $t('device_card.change_log') }}:</span>
-              <v-alert class="mt-2" v-for="changelog in props.data.changelog" :text="changelog" />
-            </v-card-text>
+            <v-toolbar>
+              <v-btn icon="mdi-close" @click="show = false" />
+              <v-toolbar-title :text="$t('device_card.close')" />
+            </v-toolbar>
 
             <v-card-text>
-              <span>{{ $t('device_card.notes') }}:</span>
-              <v-alert class="mt-2" v-for="note in props.data.note" v-html="note" />
-            </v-card-text>
+              <p><b>{{ $t('device_card.change_log') }}:</b></p>
+              <v-alert class="mt-2">
+                <p v-for="changelog in props.data.changelog" v-text="changelog" />
+              </v-alert>
 
-            <v-card-actions>
-              <v-btn color="primary" block variant="tonal" @click="show = false">{{ $t('device_card.close') }}</v-btn>
-            </v-card-actions>
+              <p class="mt-2"><b>{{ $t('device_card.notes') }}:</b></p>
+              <v-alert class="mt-2">
+                <p v-for="note in props.data.note" v-html="note" />
+              </v-alert>
+            </v-card-text>
           </v-card>
         </v-dialog>
       </v-btn>
@@ -75,10 +78,6 @@ const props = defineProps({
 </script>
 
 <style scoped lang="less">
-span {
-  font-weight: 700;
-}
-
 .image-title {
   display: flex;
   justify-content: space-between;

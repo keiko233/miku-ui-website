@@ -48,7 +48,7 @@ onMounted(() => {
 
 <style scoped lang="less">
 .loading-box {
-  height: 80vh;
+  height: calc(100vh - 96px);
   display: flex;
   align-items: center;
   justify-content: center;
