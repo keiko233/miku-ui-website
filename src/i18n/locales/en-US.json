@@ -12,6 +12,8 @@
     "detailed": "Detailed",
     "change_log": "Change Log",
     "notes": "Notes",
-    "close": "Close"
+    "close": "Close",
+    "get_resources": "Get Resources",
+    "quark_pan": "Quark Pan"
   }
 }

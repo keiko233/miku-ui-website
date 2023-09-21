@@ -12,6 +12,8 @@
     "detailed": "详细信息",
     "change_log": "更新日志",
     "notes": "备注",
-    "close": "关闭"
+    "close": "关闭",
+    "get_resources": "获取资源",
+    "quark_pan": "夸克网盘"
   }
 }

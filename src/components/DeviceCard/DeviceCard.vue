@@ -19,7 +19,22 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn color="primary" @click="openUrl(props.data.sourcforge_url)">{{ $t('device_card.source_forge') }}</v-btn>
+      <v-btn color="primary">
+        {{ $t('device_card.get_resources') }}
+        <v-dialog v-model="showResources" activator="parent" width="400">
+          <v-card>
+            <v-toolbar>
+              <v-btn icon="mdi-close" @click="showResources = false" />
+              <v-toolbar-title :text="$t('device_card.get_resources')" />
+            </v-toolbar>
+
+            <v-card-text>
+              <v-btn color="primary" block @click="openUrl(props.data.sourcforge_url)">{{ $t('device_card.source_forge') }}(Offical)</v-btn>
+              <v-btn color="primary" block class="mt-2" @click="openUrl(props.info.mirrors[0].url)">{{ $t('device_card.quark_pan') }}(Mirror)</v-btn>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
+      </v-btn>
 
       <v-btn color="primary">
         {{ $t('device_card.detailed') }}
@@ -53,6 +68,8 @@ import { openUrl } from '../../utils/openUrl';
 
 const show = ref(false);
 
+const showResources = ref(false);
+
 interface Data {
   id: number,
   device: string,
@@ -72,6 +89,10 @@ interface Data {
 const props = defineProps({
   data: {
     type: Object as PropType<Data>,
+    required: true
+  },
+  info: {
+    type: Object,
     required: true
   }
 });

@@ -8,7 +8,7 @@
     </v-col>
 
     <v-col cols="12" sm="6" md="4" v-else v-for="data in devices">
-      <DeviceCard :data="data" />
+      <DeviceCard :data="data" :info="info" />
     </v-col>
   </v-row>
 </template>
@@ -39,10 +39,20 @@ const getDevices = () => {
     .catch(err => console.error(err));
 };
 
+const info = ref();
+
+const getInfo = () => {
+  fetch('/api/info')
+    .then(response => response.json())
+    .then(response => info.value = response)
+    .catch(err => console.error(err));
+};
+
 watchEffect(getDevices);
 
 onMounted(() => {
   getDevices();
+  getInfo();
 });
 </script>
 
