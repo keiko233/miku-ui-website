@@ -42,6 +42,7 @@ const items = ref([
   { device: 'Xiaomi Civi 1S', codename: 'zijin', icon: 'mdi-cellphone' },
   { device: 'Xiaomi 6X', codename: 'Wayne', icon: 'mdi-cellphone' },
   { device: 'Redmi Note 7 Pro', codename: 'Violet', icon: 'mdi-cellphone' },
+  { device: 'Xiaomi 6', codename: 'Sagit', icon: 'mdi-cellphone' },
 ]);
 
 const click = (path?: string) => {
