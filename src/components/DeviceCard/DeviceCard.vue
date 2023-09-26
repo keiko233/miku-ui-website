@@ -10,12 +10,12 @@
     </v-img>
 
     <v-card-text>
-      <p><span>Miku UI {{ $t('device_card.version') }}:</span> {{ props.data.version }}</p>
-      <p><span>Android {{ $t('device_card.version') }}:</span> {{ props.data.android }}</p>
-      <p><span>{{ $t('device_card.status') }}:</span> {{ props.data.status }}</p>
-      <p><span>Selinux:</span> {{ props.data.selinux }}</p>
-      <p><span>Kernel SU:</span> {{ props.data.kernelsu }}</p>
-      <p><span>{{ $t('device_card.data') }}:</span> {{ props.data.data }}</p>
+      <p><b>Miku UI {{ $t('device_card.version') }}:</b> {{ props.data.version }}</p>
+      <p><b>Android {{ $t('device_card.version') }}:</b> {{ props.data.android }}</p>
+      <p><b>{{ $t('device_card.status') }}:</b> {{ props.data.status }}</p>
+      <p><b>Selinux:</b> {{ props.data.selinux }}</p>
+      <p><b>Kernel SU:</b> {{ props.data.kernelsu }}</p>
+      <p><b>{{ $t('device_card.data') }}:</b> {{ props.data.data }}</p>
     </v-card-text>
 
     <v-card-actions>
@@ -29,8 +29,10 @@
             </v-toolbar>
 
             <v-card-text>
-              <v-btn color="primary" block @click="openUrl(props.data.sourcforge_url)">{{ $t('device_card.source_forge') }}(Offical)</v-btn>
-              <v-btn color="primary" block class="mt-2" @click="openUrl(props.info.mirrors[0].url)">{{ $t('device_card.quark_pan') }}(Mirror)</v-btn>
+              <v-btn color="primary" block @click="openUrl(props.data.sourcforge_url)">{{ $t('device_card.source_forge')
+              }}(Offical)</v-btn>
+              <v-btn color="primary" block class="mt-2" @click="openUrl(props.info.mirrors[0].url)">{{
+                $t('device_card.quark_pan') }}(Mirror)</v-btn>
             </v-card-text>
           </v-card>
         </v-dialog>
