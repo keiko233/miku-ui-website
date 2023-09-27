@@ -29,10 +29,12 @@
             </v-toolbar>
 
             <v-card-text>
-              <v-btn color="primary" block @click="openUrl(props.data.sourcforge_url)">{{ $t('device_card.source_forge')
-              }}(Offical)</v-btn>
-              <v-btn color="primary" block class="mt-2" @click="openUrl(props.info.mirrors[0].url)">{{
-                $t('device_card.quark_pan') }}(Mirror)</v-btn>
+              <v-btn color="primary" block @click="openUrl(props.data.sourcforge_url)">
+                {{ $t('device_card.source_forge') }}(Offical)
+              </v-btn>
+              <v-btn color="primary" block class="mt-2" v-for="item in props.info.mirrors" @click="openUrl(item.url)">{{
+                getMirrorText(item.type) }}(Mirror)
+              </v-btn>
             </v-card-text>
           </v-card>
         </v-dialog>
@@ -67,6 +69,9 @@
 
 <script setup lang="ts">
 import { openUrl } from '../../utils/openUrl';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const show = ref(false);
 
@@ -98,6 +103,11 @@ const props = defineProps({
     required: true
   }
 });
+
+const getMirrorText = (type: 'quark' | 'aliyun') => {
+  if (type == 'quark') return t('device_card.quark_pan');
+  else if (type == 'aliyun') return t('device_card.aliyun_pan');
+};
 </script>
 
 <style scoped lang="less">
