@@ -52,7 +52,7 @@
             <v-card-text>
               <p><b>{{ $t('device_card.change_log') }}:</b></p>
               <v-alert class="mt-2">
-                <p v-for="changelog in props.data.changelog" v-text="changelog" />
+                <p v-for="changelog in props.data.changelog" v-html="changelog" />
               </v-alert>
 
               <p class="mt-2"><b>{{ $t('device_card.notes') }}:</b></p>
