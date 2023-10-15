@@ -15,7 +15,7 @@
       <p><b>{{ $t('device_card.status') }}:</b> {{ props.data.status }}</p>
       <p><b>Selinux:</b> {{ props.data.selinux }}</p>
       <p><b>Kernel SU:</b> {{ props.data.kernelsu }}</p>
-      <p><b>{{ $t('device_card.data') }}:</b> {{ props.data.data }}</p>
+      <p><b>{{ $t('device_card.data') }}:</b> {{ props.data.date }}</p>
     </v-card-text>
 
     <v-card-actions>
@@ -86,7 +86,7 @@ interface Data {
   status: string,
   selinux: string,
   kernelsu: string,
-  data: string,
+  date: string,
   sourcforge_url: string,
   changelog: [],
   note: [],
