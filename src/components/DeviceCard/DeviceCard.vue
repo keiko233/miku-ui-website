@@ -9,14 +9,18 @@
       </div>
     </v-img>
 
-    <v-card-text>
-      <p><b>Miku UI {{ $t('device_card.version') }}:</b> {{ props.data.version }}</p>
-      <p><b>Android {{ $t('device_card.version') }}:</b> {{ props.data.android }}</p>
-      <p><b>{{ $t('device_card.status') }}:</b> {{ props.data.status }}</p>
-      <p><b>Selinux:</b> {{ props.data.selinux }}</p>
-      <p><b>Kernel SU:</b> {{ props.data.kernelsu }}</p>
-      <p><b>{{ $t('device_card.data') }}:</b> {{ props.data.date }}</p>
-    </v-card-text>
+    <div class="pl-4 pr-4 pt-2">
+      <v-card :color="props.data.android == '14' ? 'blue-darken-4' : 'pink-darken-4'" variant="tonal">
+        <v-card-text>
+          <p><b>Miku UI {{ $t('device_card.version') }}:</b> {{ props.data.version }}</p>
+          <p><b>Android {{ $t('device_card.version') }}:</b> {{ props.data.android }}</p>
+          <p><b>{{ $t('device_card.status') }}:</b> {{ props.data.status }}</p>
+          <p><b>Selinux:</b> {{ props.data.selinux }}</p>
+          <p><b>Kernel SU:</b> {{ props.data.kernelsu }}</p>
+          <p><b>{{ $t('device_card.data') }}:</b> {{ props.data.date }}</p>
+        </v-card-text>
+      </v-card>
+    </div>
 
     <v-card-actions>
       <v-btn color="primary">
